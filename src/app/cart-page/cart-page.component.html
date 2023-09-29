@@ -1,0 +1,32 @@
+<div class="container-fluid mt-2">
+    <table class="table table-bordered">
+        <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tbody *ngFor="let cartItem of cart.items">
+            <tr>
+                <th scope="row">{{cartItem.food.id}}</th>
+                <td><img [src]=cartItem.food.imageUrl width="100" height="100" /></td>
+                <td>{{cartItem.food.name}}</td>
+                <td>{{cartItem.food.price}}</td>
+                <td>{{cartItem.quantity}}</td>
+                <td>
+                    <i class="fa-solid fa-minus shadow bg-body rounded-circle p-3 mr-2"
+                        style="color: red;font-size: 18px;" (click)="decreaseQuantity(cartItem)">
+                    </i>
+                    <i class="fa-solid fa-plus shadow bg-body rounded-circle p-3 mr-2"
+                        style="color: green;font-size: 18px;" (click)="increaseQuantity(cartItem)">
+                    </i>
+                    <i class="fa-solid fa-close shadow bg-body rounded-circle p-3 mr-2"
+                        style="color: red;font-size: 18px;" (click)="removeFromCart(cartItem)">
+                    </i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

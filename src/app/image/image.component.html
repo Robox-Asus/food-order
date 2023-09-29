@@ -1,0 +1,16 @@
+<div class="card" style="width: 20rem;">
+    <img class="card-img-top" src={{src.imageUrl}} alt="Card image cap" height="250">
+    <div class="card-body">
+        <h5 class="card-title">{{src.name}}
+            <span class="ml-auto">
+                <ngb-rating [max]="5" (rate)=src.star [readonly]="false"></ngb-rating>
+            </span>
+        </h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-primary" (click)="addToCart()">Add To Cart</button>
+            <i class="fa-solid fa-plus shadow bg-body rounded-circle p-3" style="color: red;font-size: 18px;" (click)="increaseCount()"></i>
+        </div>
+    </div>
+</div>
